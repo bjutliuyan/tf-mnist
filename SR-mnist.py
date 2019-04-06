@@ -2,6 +2,7 @@
     Describe: 手写数字识别
     Author：liu yan
     Modify: 2019-04-05
+    Accuracy: 0.91
 '''
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
