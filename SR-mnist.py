@@ -32,6 +32,6 @@ for i in range(1000):
 
     if i % 100 == 0:
         # 每训练100次后评估模型
-        correct_prediction = tf.equal(tf.argmax(y, 1), tf.arg_max(y_real, 1))       # 比较预测值和真实值是否一致
+        correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_real, 1))       # 比较预测值和真实值是否一致
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))             # 统计预测正确的个数，取均值得到准确率
         print(sess.run(accuracy, feed_dict={x: mnist.test.images, y_real: mnist.test.labels}))
