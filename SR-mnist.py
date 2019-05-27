@@ -19,7 +19,8 @@ x = tf.placeholder("float", [None, 784])
 y = tf.nn.softmax(tf.matmul(x, weights) + biases)                                   # 模型的预测值
 y_real = tf.placeholder("float", [None, 10])                                        # 真实值
 
-cross_entropy = -tf.reduce_sum(y_real * tf.log(y))                                  # 预测值与真实值的交叉熵
+#cross_entropy = -tf.reduce_sum(y_real * tf.log(y))                                  # 预测值与真实值的交叉熵
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels = y_real, logits = y)
 train_step = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)        # 使用梯度下降优化器最小化交叉熵
 
 # 开始训练
