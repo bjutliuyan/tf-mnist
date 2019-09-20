@@ -5,8 +5,8 @@ def my_regression():
 
     #准备数据
     with tf.variable_scope("data"):
-        #准备10000条数据x的平均值为5.0 标准差1.0
-        x = tf.random_uniform([10000,1], mean = 5.0, stddev = 1.0, name = "x")
+        #准备100条数据x的平均值为5.0 标准差1.0
+        x = tf.random_normal([100, 1], mean = 5.0, stddev=1.0, name="x")
         #真实的关系为 y = 0.7x + 0.6
         y_true = tf.matmul(x, [[0.7]]) + 0.6
 
