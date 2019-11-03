@@ -2,7 +2,6 @@
 @description: 保存手写数字识别前20张图片示例
 @date： 2019/11/03 22:23
 @author：ly
-
 '''
 
 from tensorflow.examples.tutorials.mnist import input_data
