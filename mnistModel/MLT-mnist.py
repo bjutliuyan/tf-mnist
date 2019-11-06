@@ -10,7 +10,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
 #读取数据集
-mnist = input_data.read_data_sets("MNIST_data/",one_hot=True)
+mnist = input_data.read_data_sets("../MNIST_data/",one_hot=True)
 
 #设置权重和偏置
 in_units = 784                                                                  #输入节点数
