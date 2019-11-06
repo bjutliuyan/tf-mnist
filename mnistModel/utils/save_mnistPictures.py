@@ -8,10 +8,10 @@ from tensorflow.examples.tutorials.mnist import input_data
 from PIL import Image
 import os
 
-mnist = input_data.read_data_sets("../MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets("../../MNIST_data/", one_hot=True)
 
 # 如果没这个文件夹自动创建
-save_dir = '../MNIST_data/raw/'
+save_dir = '../../MNIST_data/raw/'
 if os.path.exists(save_dir) is False:
     os.makedirs(save_dir)
 
