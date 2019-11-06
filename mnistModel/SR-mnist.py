@@ -8,7 +8,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
 # 下载MNIST数据集到'MNIST_data'文件夹并解压
-mnist = input_data.read_data_sets('../MNIST_data/', one_hot=True)
+mnist = input_data.read_data_sets('MNIST_data/', one_hot=True)
 
 # 设置权重weights和偏置biases作为优化变量，初始值设为0
 weights = tf.Variable(tf.zeros([784, 10]))
