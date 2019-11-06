@@ -27,7 +27,9 @@ def variable_with_weight_loss(shape, stddev, w1):
     return var
 
 #下载数据集，解压展开到默认位置
-#cifar10.maybe_download_and_extract()
+cifar10.maybe_download_and_extract()
+
+
 #生成训练数据
 images_train, labels_train = cifar10_input.distorted_inputs(data_dir=data_dir, batch_size=batch_size)
 #生成测试数据
