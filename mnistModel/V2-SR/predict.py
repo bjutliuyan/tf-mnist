@@ -1,7 +1,6 @@
 import tensorflow as tf
 import cv2
 from model import NetWork
-from PIL import Image
 import numpy as np
 
 CKPT_DIR = '../ckpt'
@@ -23,12 +22,17 @@ class Predict:
             raise FileNotFoundError("未保存模型")
 
     def predict(self, image_path):
-        img = Image.open(image_path).convert('L')
-        flatten_img = np.reshape(img, 784)
+        # 读取图片
+        img = cv2.imread(image_path)
+        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        # 并转换为28 * 28
+        res = cv2.resize(img_gray, (28,28), interpolation=cv2.INTER_LINEAR)
+        flatten_img = np.reshape(res, 784)
+        # 置为MNIST类的黑白图
         x = np.array([1 - flatten_img])
         y = self.sess.run(self.net.y, feed_dict={self.net.x: x})
         print('        -> Predict digit', np.argmax(y[0]))
 
 if __name__ == "__main__":
     app = Predict()
-    app.predict('../test_images/4.jpg')
+    app.predict('../test_images/8.jpg')
