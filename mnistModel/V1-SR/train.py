@@ -35,3 +35,10 @@ class Train:
         test_label = self.mnist_data.test.labels
         accuracy = self.sess.run(self.net.accuracy, feed_dict={self.net.x:test_x,self.net.y_real:test_label})
         print("准确率: %.3f，共测试了%d张图片 " % (accuracy, len(test_label)))
+
+if __name__ == "__main__":
+    app = Train()
+    #对训练集进行训练
+    app.train()
+    #对测试机进行测试
+    app.calculate_accuracy()
