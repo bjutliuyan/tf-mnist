@@ -25,7 +25,7 @@ class Train:
             _, loss = self.sess.run([self.net.train, self.net.loss],
                                     feed_dict={self.net.x: batch_xs, self.net.y_real: batch_ys})
             if (i + 1) % 100 == 0:
-                print('第%5d步，当前loss：%.2f' % (i + 1, loss[99]))
+                print('第%5d步，当前loss：%.2f' % (i + 1, loss))
 
     '''
     @description: 验证测试集准确率
